@@ -12,7 +12,9 @@ export default function Rating() {
   const navigate = useNavigate()
 
   const submit = () => {
-    navigate('/thank-you')
+    if (selectedRating) {
+      navigate(`/thank-you/${selectedRating}`)
+    }
   }
 
   return (
