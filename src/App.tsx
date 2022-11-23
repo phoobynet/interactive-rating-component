@@ -10,7 +10,7 @@ export default function App() {
         element={<Rating />}
       />
       <Route
-        path="/thank-you"
+        path="/thank-you/:rating"
         element={<ThankYou />}
       />
     </Routes>

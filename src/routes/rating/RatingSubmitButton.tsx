@@ -1,12 +1,11 @@
 import { MouseEventHandler } from 'react'
 
-export default function SubmitButton({
-  selectedRating,
-  onClick,
-}: {
+type Props = {
   selectedRating?: number
   onClick: MouseEventHandler<HTMLButtonElement>
-}) {
+}
+
+export default function RatingSubmitButton({ selectedRating, onClick }: Props) {
   return (
     <button
       type="button"

@@ -1,28 +1,30 @@
 import { useState } from 'react'
 import PageContainer from '@/components/PageContainer'
 import Panel from '@/components/Panel'
-import InertStarOval from '@/components/InertStarOval'
-import RatingButton from '@/components/RatingButton'
-import SubmitButton from '@/components/SubmitButton'
+import RatingInertStarOval from './RatingInertStarOval'
+import RatingButton from './RatingButton'
+import RatingSubmitButton from './RatingSubmitButton'
+import { useNavigate } from 'react-router-dom'
 
 export default function Rating() {
   const [selectedRating, setSelectedRating] = useState<number>()
   const ratings = [1, 2, 3, 4, 5]
+  const navigate = useNavigate()
 
   const submit = () => {
-    console.log('TODO: Submit button')
+    navigate('/thank-you')
   }
 
   return (
     <PageContainer>
       <Panel>
         <div className="pb-8">
-          <InertStarOval>
+          <RatingInertStarOval>
             <img
               src="/images/icon-star.svg"
               alt="Star"
             />
-          </InertStarOval>
+          </RatingInertStarOval>
         </div>
         <header className="pb-4">
           <h1 className="text-heading-lg text-white">How did we do?</h1>
@@ -44,7 +46,7 @@ export default function Rating() {
           </div>
         </main>
         <footer>
-          <SubmitButton
+          <RatingSubmitButton
             selectedRating={selectedRating}
             onClick={submit}
           />

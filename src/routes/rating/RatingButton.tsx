@@ -1,14 +1,16 @@
 import { MouseEventHandler } from 'react'
 
+type Props = {
+  rating: number
+  selectedRating?: number
+  onClick: MouseEventHandler
+}
+
 export default function RatingButton({
   rating,
   selectedRating,
   onClick,
-}: {
-  rating: number
-  selectedRating?: number
-  onClick: MouseEventHandler
-}) {
+}: Props) {
   return (
     <button
       className={`flex h-[3.1875rem] w-[3.1875rem] cursor-pointer items-center justify-center rounded-full ${
