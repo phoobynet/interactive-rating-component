@@ -1,12 +1,17 @@
+import Rating from '@/routes/rating/Rating'
 import { Route, Routes } from 'react-router-dom'
-import Home from './routes/home/Home'
+import ThankYou from '@/routes/thank-you/ThankYou'
 
-export default function App () {
+export default function App() {
   return (
     <Routes>
       <Route
-        path="/"
-        element={<Home />}
+        index
+        element={<Rating />}
+      />
+      <Route
+        path="/thank-you"
+        element={<ThankYou />}
       />
     </Routes>
   )
